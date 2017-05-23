@@ -23,6 +23,9 @@ int main(int argc, char *argv[])
 {
     int n_hormigas = 0;
 
+    printf("ingrese largo del alambre ")
+    scanf()
+
     printf("ingrese numero de hormigas");
     scanf("%d",&n_hormigas);
 
