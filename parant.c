@@ -1,10 +1,15 @@
 #include <stdio.h>
 #include <mpi.h>
+#include <time.h>
 
 int main(int argc, char **argv)
 {
 
   int ierr, num_procs, my_id=0;
+
+  clock_t tiempo_i;
+  clock_t tiempo_f;
+  double m_seconds;
 
   MPI_Status stat;
   ierr = MPI_Init(&argc, &argv);
@@ -22,12 +27,13 @@ int main(int argc, char **argv)
   l = 20;
   n = 4;
 
+  tiempo_i = clock();
 
   switch (my_id)
   {
     case 0: //Nodo maestro
       printf("La cantidad de hormigas es: %d hormigas \n", n);
-      printf("La longitud del alambre es: %d [metros] \n", l);
+      printf("La longitud del alambre es: %d [centimetros] \n", l);
         //int array[2]={l,n};
     break;
 
@@ -64,6 +70,10 @@ int main(int argc, char **argv)
           printf("el tiempo maximo para que caigan todas las hormigas, es %d \n", max);
     break;
    }
+
+  tiempo_f = clock();
+  m_seconds = (double) (tiempo_f - tiempo_i)/CLOCKS_PER_SEC;
+  printf("El tiempo de ejecucion fue %.16g [milesegundos]\n", m_seconds * 1000.0);
 
   ierr = MPI_Finalize();
   return 0;
