@@ -21,11 +21,11 @@ int main(int argc, char **argv)
   int n;
   int min = 0;
   int max = 0;
-  int valores_x[4]={3,11,12,13};
+  int valores_x[8]={6, 10, 11, 14, 18, 20, 22, 27};
   int i = 0;
 
-  l = 20;
-  n = 4;
+  l = 35;
+  n = 8;
 
   tiempo_i = clock();
 
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
               min = x;
             }
           }
-          printf("el tiempo minimo para que caigan todas las hormigas, es %d \n", min);
+          printf("el tiempo minimo para que caigan todas las hormigas, es %d segundos. \n", min);
     break;
 
     case 2:
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
               }
               i++;
             }
-          printf("el tiempo maximo para que caigan todas las hormigas, es %d \n", max);
+          printf("el tiempo maximo para que caigan todas las hormigas, es %d segundos. \n", max);
     break;
    }
 

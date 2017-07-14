@@ -34,8 +34,13 @@ int main(int argc, char **argv)
         i++;
     }
 
+<<<<<<< HEAD
     printf("el tiempo minimo para que caigan todas las hormigas, es %d \n", min);
     printf("el tiempo maximo para que caigan todas las hormigas, es %d \n", max);
+=======
+    printf("el tiempo minimo para que caigan todas las hormigas, es %d segundos. \n", min);
+    printf("el tiempo maximo para que caigan todas las hormigas, es %d segundos. \n", max);
+>>>>>>> 873e5c1a6a682248f4811c669c46e9384dee3945
 
     tiempo_f = clock();
     m_seconds = (double) (tiempo_f - tiempo_i)/CLOCKS_PER_SEC;
